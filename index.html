@@ -22,7 +22,8 @@
     </nav>
 
     <header class="hero">
-        <div class="container">
+        <canvas id="plasmaCanvas"></canvas>
+        <div class="container hero-content">
             <h1 class="headline">Simulate the future.<br>Build real systems.</h1>
             <p class="subheadline">Applying reinforcement learning and rigorous engineering to solving high-energy challenges.</p>
             <a href="#projects" class="btn primary-btn">View My Work</a>
@@ -51,6 +52,9 @@
                 <div class="projects-grid">
                     
                     <div class="project-card">
+                        <div class="project-visual">
+                            <img src="https://placehold.co/600x400/1a1a1d/3b82f6?text=Fusion+Hardware+Photo" alt="Fusion Demo Setup">
+                        </div>
                         <div class="card-content">
                             <h3>Nuclear Fusion Demo Build</h3>
                             <p>A physical experimental setup demonstrating the core principles of plasma containment and nuclear fusion energy.</p>
@@ -64,6 +68,9 @@
                     </div>
 
                     <div class="project-card">
+                        <div class="project-visual">
+                            <img src="https://placehold.co/600x400/1a1a1d/3b82f6?text=Airfoil+CFD+Animation" alt="Airfoil Simulation">
+                        </div>
                         <div class="card-content">
                             <h3>RL Airfoil Geometry Design</h3>
                             <p>Application of reinforcement learning algorithms to optimize airfoil shapes for aerodynamic efficiency and performance.</p>
@@ -77,6 +84,9 @@
                     </div>
 
                     <div class="project-card">
+                        <div class="project-visual">
+                            <img src="https://placehold.co/600x400/1a1a1d/3b82f6?text=Plasma+Ignition+Data" alt="Ignition Simulation Data">
+                        </div>
                         <div class="card-content">
                             <h3>RL for Fusion Ignition</h3>
                             <p>Simulation of fusion ignition conditions utilizing reinforcement learning to control plasma stability and confinement parameters.</p>
@@ -109,5 +119,6 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
