@@ -4,7 +4,7 @@
     --card-bg: #1a1a1d;        
     --text-main: #ededed;      
     --text-muted: #a0a0a0;     
-    --accent: #8b5cf6;         /* Purple for FRC theme */
+    --accent: #8b5cf6;         /* Changed to Purple to match FRC request */
     --accent-hover: #a78bfa;
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --spacing-md: 2rem;
@@ -45,7 +45,7 @@ ul { list-style: none; }
 .nav-links a { font-size: 0.9rem; color: var(--text-muted); }
 .nav-links a:hover { color: var(--accent); }
 
-/* --- Hero Section & 3D Background --- */
+/* --- Hero Section & Animation --- */
 .hero {
     height: 90vh;
     display: flex;
@@ -56,25 +56,19 @@ ul { list-style: none; }
     overflow: hidden;
 }
 
-#canvas-container {
+#plasmaCanvas {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Behind content */
-    opacity: 0.8; /* Adjusts visibility of background */
+    z-index: 0; /* Behind the content */
+    opacity: 0.6; /* Slight fade so text is readable */
 }
 
 .hero-content {
     position: relative;
     z-index: 10; /* In front of canvas */
-    pointer-events: none; /* Let clicks pass through the box area */
-}
-
-/* Re-enable clicking on the button */
-.hero-content a {
-    pointer-events: auto; 
 }
 
 .headline {
@@ -110,7 +104,7 @@ ul { list-style: none; }
 }
 .project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
 
-/* Image Handling */
+/* New Image Handling */
 .project-visual {
     width: 100%;
     height: 200px;
@@ -120,11 +114,11 @@ ul { list-style: none; }
 .project-visual img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ensures image fills the box without stretching */
     transition: transform 0.5s ease;
 }
 .project-card:hover .project-visual img {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Zoom effect on hover */
 }
 
 .card-content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
