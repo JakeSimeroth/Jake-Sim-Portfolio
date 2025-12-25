@@ -1,159 +1,36 @@
-/* --- Variables & Reset --- */
-:root {
-    --bg-color: #0f0f11;       
-    --card-bg: #1a1a1d;        
-    --text-main: #ededed;      
-    --text-muted: #a0a0a0;     
-    --accent: #8b5cf6;         /* Changed to Purple to match FRC request */
-    --accent-hover: #a78bfa;
-    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --spacing-md: 2rem;
-    --spacing-lg: 5rem;
-}
+/* Update ONLY the Hero Section & Canvas Container part */
+/* Keep your variables and other styles the same */
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    font-family: var(--font-main);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-}
-
-a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
-ul { list-style: none; }
-
-/* --- Utilities --- */
-.container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-.section { padding: var(--spacing-lg) 0; }
-.section-title {
-    font-size: 1.5rem; font-weight: 600; margin-bottom: var(--spacing-md);
-    color: var(--text-main); display: inline-block;
-}
-
-/* --- Navigation --- */
-.navbar {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.5rem 2rem; position: sticky; top: 0;
-    background-color: rgba(15, 15, 17, 0.8);
-    backdrop-filter: blur(12px); z-index: 100;
-}
-.logo { font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; }
-.nav-links { display: flex; gap: 2rem; }
-.nav-links a { font-size: 0.9rem; color: var(--text-muted); }
-.nav-links a:hover { color: var(--accent); }
-
-/* --- Hero Section & Animation --- */
 .hero {
     height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative; /* Essential for canvas positioning */
+    position: relative;
     overflow: hidden;
 }
 
-#plasmaCanvas {
+#canvas-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Behind the content */
-    opacity: 0.6; /* Slight fade so text is readable */
+    z-index: 0; /* Behind content */
+    opacity: 0.8; /* Adjust visibility of background */
 }
 
+/* Ensure content sits on top */
 .hero-content {
     position: relative;
-    z-index: 10; /* In front of canvas */
+    z-index: 10;
+    pointer-events: none; /* Allows clicking through text if needed, though usually buttons need events */
 }
 
-.headline {
-    font-size: 3.5rem; line-height: 1.1; font-weight: 700; margin-bottom: 1.5rem;
-    background: linear-gradient(to right, #fff, #b4b4b4);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    text-shadow: 0 4px 30px rgba(0,0,0,0.5); /* Adds readability over animation */
+/* Re-enable pointer events for the button specifically */
+.hero-content a {
+    pointer-events: auto;
 }
 
-.subheadline {
-    font-size: 1.125rem; color: #d4d4d4; max-width: 600px; margin: 0 auto 2.5rem auto;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-}
-
-.btn {
-    display: inline-block; padding: 0.8rem 2rem; border-radius: 4px;
-    font-weight: 500; transition: all 0.3s ease;
-}
-.primary-btn { background-color: var(--text-main); color: var(--bg-color); }
-.primary-btn:hover { background-color: var(--accent); color: white; }
-
-/* --- Projects Grid --- */
-.projects-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;
-}
-
-.project-card {
-    background-color: var(--card-bg);
-    border: 1px solid #2a2a2d; border-radius: 12px;
-    overflow: hidden; /* Keeps image corners rounded */
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    display: flex; flex-direction: column;
-}
-.project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-
-/* New Image Handling */
-.project-visual {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    border-bottom: 1px solid #2a2a2d;
-}
-.project-visual img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures image fills the box without stretching */
-    transition: transform 0.5s ease;
-}
-.project-card:hover .project-visual img {
-    transform: scale(1.05); /* Zoom effect on hover */
-}
-
-.card-content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
-
-.project-card h3 { margin-bottom: 0.5rem; font-size: 1.25rem; }
-.project-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
-
-.tags { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-.tags span {
-    font-size: 0.75rem; background-color: rgba(139, 92, 246, 0.1); 
-    padding: 0.25rem 0.75rem; border-radius: 20px; color: var(--accent);
-}
-
-.project-link { font-size: 0.9rem; font-weight: 600; color: var(--accent); margin-top: auto; }
-.project-link:hover { color: var(--accent-hover); }
-
-/* --- Footer --- */
-footer { padding: 5rem 0; text-align: center; border-top: 1px solid #2a2a2d; margin-top: 2rem; }
-footer h2 { font-size: 2rem; margin-bottom: 1rem; }
-footer p { color: var(--text-muted); margin-bottom: 2rem; }
-
-.email-link {
-    font-size: 1.5rem; font-weight: 700; border-bottom: 2px solid var(--accent); padding-bottom: 5px;
-}
-.email-link:hover { color: var(--accent); }
-
-.socials { margin-top: 2.5rem; display: flex; justify-content: center; gap: 2rem; }
-.socials a { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
-.socials a:hover { color: var(--text-main); }
-.copyright { margin-top: 4rem; font-size: 0.8rem; opacity: 0.5; }
-
-/* --- Mobile Responsiveness --- */
-@media (max-width: 768px) {
-    .headline { font-size: 2.5rem; }
-    .nav-links { display: none; }
-    .hero { height: 70vh; }
-    .container { padding: 0 1.25rem; }
-}
+/* ... Keep the rest of your CSS (Projects, Footer, etc.) ... */
