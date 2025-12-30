@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RL Airfoil Geometry Design | Jake Sim</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific override for project pages to reduce hero height */
+        .project-hero { height: 50vh; min-height: 400px; }
+        .project-content { background: var(--bg-color); position: relative; z-index: 20; padding-top: 2rem; }
+        .back-link { margin-bottom: 2rem; display: inline-block; color: var(--accent); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">Jake Sim</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html#projects">Back to Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero project-hero">
+        <canvas id="plasmaCanvas"></canvas>
+        <div class="container hero-content">
+            <h1 class="headline">RL Airfoil Geometry Design</h1>
+            <p class="subheadline">Optimizing aerodynamic efficiency using Deep Reinforcement Learning.</p>
+        </div>
+    </header>
+
+    <main class="project-content">
+        <section class="section">
+            <div class="container">
+                <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+                
+                <h2 class="section-title">Project Summary</h2>
+                <div class="about-content">
+                    <p>
+                        <strong>Overview:</strong> This project explores the application of reinforcement learning (RL) algorithms to the optimization of airfoil shapes. 
+                        By automating the design process, we can discover geometries that maximize lift-to-drag ratios under specific flight conditions.
+                    </p>
+                    <p>
+                        [PLACEHOLDER: Paste your detailed summary of the paper here. 
+                        Discuss the specific RL algorithms used (e.g., PPO, DDPG), the reward functions defined, 
+                        and the CFD environment used for validation.]
+                    </p>
+                    <p>
+                        <strong>Key Results:</strong>
+                        <ul style="list-style-type: disc; margin-left: 20px; color: var(--text-muted);">
+                            <li>Achieved a X% increase in aerodynamic efficiency compared to NACA benchmarks.</li>
+                            <li>Reduced computational design time by Y%.</li>
+                        </ul>
+                    </p>
+                    <br>
+                    <a href="https://docs.google.com/document/d/1CHcEE7Svi8A9tSpCLGomfovkuPZ1DydS8zG8AT5uIiA/edit?tab=t.0#heading=h.6kedpxqt0yeh" target="_blank" class="btn primary-btn">Read Full Paper</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            <p class="copyright">&copy; 2026 Jake Sim. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
