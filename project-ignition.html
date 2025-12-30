@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RL for Fusion Ignition | Jake Sim</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-hero { height: 50vh; min-height: 400px; }
+        .project-content { background: var(--bg-color); position: relative; z-index: 20; padding-top: 2rem; }
+        .back-link { margin-bottom: 2rem; display: inline-block; color: var(--accent); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">Jake Sim</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html#projects">Back to Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero project-hero">
+        <canvas id="plasmaCanvas"></canvas>
+        <div class="container hero-content">
+            <h1 class="headline">RL for Fusion Ignition</h1>
+            <p class="subheadline">Controlling plasma stability and confinement parameters with AI.</p>
+        </div>
+    </header>
+
+    <main class="project-content">
+        <section class="section">
+            <div class="container">
+                <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+                
+                <h2 class="section-title">Project Summary</h2>
+                <div class="about-content">
+                    <p>
+                        <strong>Overview:</strong> Achieving ignition in nuclear fusion requires precise control over plasma temperature, density, and confinement time. 
+                        This project simulates these conditions and utilizes Reinforcement Learning to maintain stability against disruptions.
+                    </p>
+                    <p>
+                        [PLACEHOLDER: Paste your summary of the code and research here. 
+                        Describe the simulation environment, the state space (e.g., magnetic field strength, heating power), 
+                        and how the agent learned to sustain the reaction.]
+                    </p>
+                    <p>
+                        <strong>Key Outcomes:</strong>
+                        <ul style="list-style-type: disc; margin-left: 20px; color: var(--text-muted);">
+                            <li>Successfully stabilized plasma parameters for X seconds in simulation.</li>
+                            <li>Demonstrated improved reaction capability compared to PID control methods.</li>
+                        </ul>
+                    </p>
+                    <br>
+                    <a href="https://colab.research.google.com/drive/1-dIldXDXjth7zBz_8E3PgRnS9W8ukuUD" target="_blank" class="btn primary-btn">View Code on Colab</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            <p class="copyright">&copy; 2026 Jake Sim. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
