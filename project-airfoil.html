@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Specific override for project pages to reduce hero height */
         .project-hero { height: 50vh; min-height: 400px; }
         .project-content { background: var(--bg-color); position: relative; z-index: 20; padding-top: 2rem; }
         .back-link { margin-bottom: 2rem; display: inline-block; color: var(--accent); }
@@ -27,7 +26,7 @@
         <canvas id="plasmaCanvas"></canvas>
         <div class="container hero-content">
             <h1 class="headline">RL Airfoil Geometry Design</h1>
-            <p class="subheadline">Optimizing aerodynamic efficiency using Deep Reinforcement Learning.</p>
+            <p class="subheadline">Optimizing aerodynamic efficiency using Reinforcement Learning and XFOIL.</p>
         </div>
     </header>
 
@@ -39,23 +38,27 @@
                 <h2 class="section-title">Project Summary</h2>
                 <div class="about-content">
                     <p>
-                        <strong>Overview:</strong> This project explores the application of reinforcement learning (RL) algorithms to the optimization of airfoil shapes. 
-                        By automating the design process, we can discover geometries that maximize lift-to-drag ratios under specific flight conditions.
+                        <strong>Overview:</strong> Aerodynamic shape optimization typically relies on computationally expensive CFD simulations or gradient-based methods that can get stuck in local optima. 
+                        This project explores a Reinforcement Learning (RL) approach to autonomously modify airfoil geometry to maximize the lift-to-drag ratio (Cl/Cd).
+                        By coupling a Python-based RL agent with the XFOIL solver, the system learns optimal shape modifications through trial-and-error interaction with the flow environment.
                     </p>
                     <p>
-                        [PLACEHOLDER: Paste your detailed summary of the paper here. 
-                        Discuss the specific RL algorithms used (e.g., PPO, DDPG), the reward functions defined, 
-                        and the CFD environment used for validation.]
+                        <strong>Methodology:</strong> The environment is built around the NACA 0012 airfoil as a baseline. The RL agent observes the current state (Lift Coefficient, Drag Coefficient, and current geometry) and takes discrete actions to modify the shape parameters. 
+                                                The reward signal is directly tied to the improvement in the Lift-to-Drag ratio. The project implements a <strong>Q-Learning</strong> algorithm to derive an optimal policy for shape deformation.
                     </p>
                     <p>
-                        <strong>Key Results:</strong>
+                        <strong>Key Outcomes:</strong>
                         <ul style="list-style-type: disc; margin-left: 20px; color: var(--text-muted);">
-                            <li>Achieved a X% increase in aerodynamic efficiency compared to NACA benchmarks.</li>
-                            <li>Reduced computational design time by Y%.</li>
+                            <li><strong>Automated Optimization Pipeline:</strong> Successfully integrated Python with the XFOIL executable to automate aerodynamic analysis steps (paneling, solving for alpha, parsing polar files) within the RL training loop.</li>
+                            <li><strong>Performance Gains:</strong> The agent successfully learned policies that modified the baseline NACA 0012 profile, achieving improved aerodynamic efficiency. Initial training runs demonstrated an increase in the Lift-to-Drag ratio from a baseline of ~10.6 to over <strong>10.9</strong> within just a few optimization steps.</li>
+                            <li><strong>Robust Handling of Solver Failures:</strong> Implemented error handling for non-convergence cases in XFOIL, ensuring the RL training process remains stable even when generated geometries are physically infeasible.</li>
                         </ul>
                     </p>
+                    <p>
+                        <em>Note: A separate investigation into Physics-Informed Neural Networks (PINNs) for flow field prediction was also conducted to potentially accelerate the evaluation step in future iterations.</em>
+                    </p>
                     <br>
-                    <a href="https://docs.google.com/document/d/1CHcEE7Svi8A9tSpCLGomfovkuPZ1DydS8zG8AT5uIiA/edit?tab=t.0#heading=h.6kedpxqt0yeh" target="_blank" class="btn primary-btn">Read Full Paper</a>
+                    <a href="https://github.com/JakeSimeroth/xfoil-reinforcement-learning-demo" target="_blank" class="btn primary-btn">View Code on GitHub</a>
                 </div>
             </div>
         </section>
