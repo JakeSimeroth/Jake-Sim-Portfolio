@@ -39,18 +39,20 @@
                 <div class="about-content">
                     <p>
                         <strong>Overview:</strong> Achieving ignition in nuclear fusion requires precise control over plasma temperature, density, and confinement time. 
-                        This project simulates these conditions and utilizes Reinforcement Learning to maintain stability against disruptions.
+                        This project simulates these conditions and utilizes machine learning to maintain stability against disruptions.
                     </p>
                     <p>
-                        [PLACEHOLDER: Paste your summary of the code and research here. 
-                        Describe the simulation environment, the state space (e.g., magnetic field strength, heating power), 
-                        and how the agent learned to sustain the reaction.]
+                        Using a Kaggle-sourced dataset of 100,000 simulated fusion experiments, I developed a two-stage machine learning pipeline to model the complex, non-linear dynamics of nuclear fusion. The system processes 15 key parameters—including magnetic field strength, fuel density, and temperature—to predict two critical outcomes: the likelihood of ignition (Classification) and the resulting power output (Regression).
+                    </p>
+                    <p>
+                        The approach employs a Decision Tree Classifier to first identify viable ignition cases, which are then passed to a Decision Tree Regressor to forecast energy generation. This methodology allows for the rapid evaluation of fusion configurations, significantly reducing the reliance on expensive and time-consuming physical trial-and-error experiments.
                     </p>
                     <p>
                         <strong>Key Outcomes:</strong>
                         <ul style="list-style-type: disc; margin-left: 20px; color: var(--text-muted);">
-                            <li>Successfully stabilized plasma parameters for X seconds in simulation.</li>
-                            <li>Demonstrated improved reaction capability compared to PID control methods.</li>
+                            <li><strong>High-Fidelity Power Prediction:</strong> The Decision Tree Regressor achieved a Coefficient of Determination (R²) of <strong>0.999</strong> and a Mean Squared Error (MSE) of <strong>7.885e-6</strong>, enabling near-perfect prediction of power output for ignited plasmas.</li>
+                            <li><strong>Superior Baseline Performance:</strong> The model vastly outperformed a Linear Regression baseline (MSE ≈ 823, R² ≈ 0), validating the necessity of non-linear models for capturing fusion dynamics.</li>
+                            <li><strong>Optimization of Critical Parameters:</strong> Successfully analyzed and weighted 15 feature inputs across different reactor configurations (Tokamak, Stellarator, Reversed Field Pinch) to isolate the variables most critical for sustaining ignition.</li>
                         </ul>
                     </p>
                     <br>
